@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+
+<div class="container">
+    <p>Deleting <b>"<span style="color: rgb(255, 40, 40);">{{ task }}</span>"</b> is permanent. Do you wat to proceed?</p>
+    <a class="btn btn-sm btn-success" style="width: 100%; margin-bottom: 20px;" href="{% url 'todo:show_all_task' %}">No</a>
+    <br>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input class="btn btn-sm btn-danger" type="submit" value="Yes, delete it" name="Yes">
+    </form>
+</div>
+
+{% endblock %}

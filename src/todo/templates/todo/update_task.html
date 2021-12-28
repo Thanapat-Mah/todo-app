@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+
+<div class="container">
+    <a class="btn btn-sm btn-success" href="{% url 'todo:show_all_task' %}">Back to list</a>
+    <h1>Update Task</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form }}
+        <input class="btn btn-sm btn-success" type="submit" value="Update" name="Update">
+    </form>
+</div>
+
+{% endblock %}
